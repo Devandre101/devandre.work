@@ -1,0 +1,135 @@
+
+
+<html>
+
+<head>
+    <title>Easy Query</title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+    <!-- for buttons  -->
+    <style>
+      .btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: ffffff(0,0,0,0.15);border-radius: 3px 0 0 3px;}
+.btn-labeled {padding-top: 0;padding-bottom: 0;}
+.btn { margin-bottom:10px; }
+    </style>
+</head>
+
+
+  <body>   
+      <div class="admin">
+          <header class="admin__header">
+              <h1>Entities</h1>          
+          </header>
+          <nav class="admin__nav">
+            <ul class="menu">
+              <li class="menu__item">
+                <a class="menu__link" >Customers</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Order</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Products</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Employee</a>
+              </li>
+              <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+              <br> <br><br> <br>
+             <button class="btn"> <i class="fa fa-times-circle" style="font-size:30px"></i> </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+             <button class="btn"> <i class="fa fa-newspaper-o" style="font-size:20px"></i> </button> &nbsp;&nbsp;&nbsp;
+             <button class="btn">  <i class="fa fa-dashboard" style="font-size:22px"></i> </button>                        
+            </ul>
+          </nav>
+      
+        
+            
+      
+      <div class="dashboard">          
+              <div style="position:absolute; right:-200px;   height: 50% "  style="width:864px;"  class="panel important" >
+                  <h2>Columns </h2>
+                  <ul>   
+                      <table style="width:100%">
+                          <tr>                        
+                            <th>Epression</th>
+                            <th>Title</th> 
+                          </tr>
+                          <tr *ngFor="let col of mockColumnsData; let i = index">
+                              <td>{{col.expression}}</td>
+                              <td>{{col.title}}</td>
+                          </tr>
+                        </table>                  
+                  </ul>
+
+                  <h1 class="heading-2">Conditions</h1>
+                  <div class="divider-2"> <span></span>
+                    <table style="width:100%">
+                        <tr>
+                          <th></th>
+                        </tr>
+                        <tr>
+                            <td>Select records where all of the following</td>
+                          <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+                         
+                        </tr>
+                        <tr>
+                            <td>Order.Freight is greater than 500</td>
+                            <td><i class="far fa-circle"></i></td>
+                          </tr>
+                          <tr>
+                              <td><a href="#">[Add new condition]</a></td>
+                              <td></td>
+                            </tr>
+                      </table> 
+                    </div>
+                </div>             
+                  <div style="position:absolute; right:-2180px;"  style="width:864px;"  class="panel important" >
+                  
+                    <h2>Menu </h2>
+                          <div class="col-md-12">
+                              <br /> <br /> 
+                              <br />
+                              <button type="button" class="btn btn-labeled btn-primary">
+                                  <span class="btn-label"><i class="fa fa-times"></i></span>Clear query &nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                  <br /> <br />
+                                  <button type="button" class="btn btn-labeled btn-primary">
+                                      <span class="btn-label"><i class="fa fa-download"></i></span>Load query &nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                      <br />  <br />  
+                              <button type="button" class="btn btn-labeled btn-primary">
+                                  <span class="btn-label"><i class="fa fa-download"></i></span>Save query&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                  
+                                  <br /> <br />  <br />
+                              <a class="btn btn-success btn-labeled" role="button">
+                                  <span class="btn-label"><i class="glyphicon glyphicon-info-sign"></i></span> Execute&nbsp;&nbsp;&nbsp;&nbsp;  </a>
+                          </div>
+                    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+
+                </div>              
+      </div>
+        </div>
+      
+        <div class="panel important">
+            <h2>Results </h2>
+            <ul class = "mockResults">        
+                <table style="width:50%">
+                    <tr>
+                      <th></th>
+                      <th>Customer Country</th>
+                      <th>Order Freight Sum</th> 
+                    </tr>
+                    <tr *ngFor="let result of mockResultsData; let i = index">
+                      <td>{{i + 1}}</td>
+                      <td>{{result.country}}</td>
+                      <td>{{result.orderFreightSum}}</td>
+                  </tr>  
+                  </table>             
+            </ul>
+          </div>
+  </body>
+</html>
+
+
+
+
